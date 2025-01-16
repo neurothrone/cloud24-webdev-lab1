@@ -1,0 +1,96 @@
+:root {
+    --primary-prominent-color: #D72638;
+    --secondary-prominent-color: #F5B700;
+    --primary-black-color: #1C1C1C;
+    --secondary-black-color: #2C2C2C;
+    --primary-white-color: #FFF;
+    --secondary-white-color: #F5F5F5;
+}
+
+body {
+    background-color: var(--primary-black-color);
+    color: var(--primary-white-color);
+    display: flex;
+    flex-direction: column;
+    font-family: "Cutive Mono", monospace;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+h1, h2, h3 {
+    color: var(--primary-white-color);
+}
+
+footer {
+    background-color: var(--secondary-black-color);
+    color: var(--secondary-white-color);
+}
+
+/* Navbar */
+.navbar-brand {
+    color: var(--primary-prominent-color);
+    font-family: "Libre Baskerville", serif;
+}
+
+.nav-link {
+    color: var(--secondary-prominent-color);
+}
+
+/* Cards */
+.card {
+    background-color: var(--secondary-black-color);
+    border: 1px solid #444;
+    color: var(--primary-white-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card .btn {
+    background-color: var(--primary-prominent-color);
+    color: var(--primary-white-color);
+    border: none;
+}
+
+.card .btn:hover {
+    background-color: var(--secondary-prominent-color);
+    color: var(--primary-black-color);
+}
+
+/* Toast */
+.custom-toast {
+    background-color: var(--primary-prominent-color);
+    color: var(--primary-white-color);
+}
+
+/* Modal */
+.modal-header,
+.modal-content,
+.modal-footer,
+.modal-footer .btn-danger,
+.modal-footer .btn-secondary {
+    border: none;
+}
+
+.modal-header {
+    background-color: var(--primary-prominent-color);
+}
+
+.modal-header .btn-close {
+    background-color: transparent;
+    filter: invert(1);
+}
+
+.modal-content {
+    background-color: var(--secondary-black-color);
+}
+
+.modal-footer .btn-danger {
+    background-color: var(--primary-prominent-color);
+}
