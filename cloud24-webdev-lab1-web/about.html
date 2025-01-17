@@ -44,9 +44,13 @@
         </section>
         <section class="mt-4">
             <h3>Our Location</h3>
-            <img src="https://maps.googleapis.com/maps/api/staticmap?center=Gothenburg+Central+Station&zoom=15&size=600x300&key=AIzaSyAmJUWjUd7Tn8N3XN-UZLEdlvsFhccYu0g"
-                 alt="Map"
-                 class="img-fluid rounded d-block">
+            <!-- !: Google Maps URLs API -> Source: https://developers.google.com/maps/documentation/urls/get-started#search-action -->
+            <!-- !: Google Maps Static Map API -> Source: https://developers.google.com/maps/documentation/maps-static/overview -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Gothenburg+Central+Station" target="_blank">
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center=Gothenburg+Central+Station&zoom=15&size=600x300&key=AIzaSyAmJUWjUd7Tn8N3XN-UZLEdlvsFhccYu0g"
+                     alt="Map"
+                     class="img-fluid rounded d-block">
+            </a>
         </section>
     </main>
 

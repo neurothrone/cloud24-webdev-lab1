@@ -11,10 +11,16 @@ function MapLocation(props: MapLocationProps) {
   return (
     <>
       {apiKey !== undefined ?
-        <img
-          src={`https://maps.googleapis.com/maps/api/staticmap?center=${address}&zoom=15&size=${width}x${height}&key=${apiKey}`}
-          alt="Map"
-          className="img-fluid rounded d-block"/>
+        // !: Google Maps URLs API
+        // Source: https://developers.google.com/maps/documentation/urls/get-started#search-action
+        // !: Google Maps Static Map API
+        // Source: https://developers.google.com/maps/documentation/maps-static/overview
+        <a href={`https://www.google.com/maps/search/?api=1&query=${address}`} target="_blank">
+          <img
+            src={`https://maps.googleapis.com/maps/api/staticmap?center=${address}&zoom=15&size=${width}x${height}&key=${apiKey}`}
+            alt="Map"
+            className="img-fluid rounded d-block"/>
+        </a>
         : null}
     </>
   );
