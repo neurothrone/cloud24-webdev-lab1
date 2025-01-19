@@ -45,6 +45,11 @@ function addToCart(index) {
   displayToast(service.name);
 }
 
+function removeFromCart(index) {
+  cart = cart.filter((_, i) => i !== index);
+  updateCartDisplay();
+}
+
 function displayToast(serviceName) {
   const toastBody = document.querySelector("#cartToast .toast-body");
   toastBody.textContent = `Added "${serviceName}" to your cart. Hope you're ready for this!`;
@@ -69,11 +74,15 @@ function updateCartDisplay() {
   if (cart.length === 0) {
     cartItems.innerHTML = `
             <p class="text-center">Your cart is empty. Guess you're still deciding what bad decisions to make today.</p>
+            <butto
         `;
   } else {
-    cartItems.innerHTML = cart
-      .map(item => `<p>${item.name} - $${item.price}</p>`)
-      .join("");
+    cartItems.innerHTML = cart.map((item, index) => `
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <p class="mb-0">${item.name} - $${item.price}</p>
+            <button class="btn btn-danger" onclick="removeFromCart(${index})">Remove</button>
+        </div>
+    `).join("");
   }
 }
 
