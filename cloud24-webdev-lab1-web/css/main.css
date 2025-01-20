@@ -70,6 +70,10 @@ footer {
 }
 
 /* Modal */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
 .modal-header,
 .modal-content,
 .modal-footer,
@@ -93,4 +97,24 @@ footer {
 
 .modal-footer .btn-danger {
     background-color: var(--primary-prominent-color);
+}
+
+/* Cart Button */
+
+.cart-button {
+    background-color: var(--secondary-prominent-color);
+    border: none;
+}
+
+.cart-button:hover {
+    background-color: var(--primary-prominent-color);
+}
+
+.cart-icon {
+    background-color: var(--secondary-black-color);
+}
+
+/* Services */
+.price-text {
+    color: var(--secondary-prominent-color);
 }

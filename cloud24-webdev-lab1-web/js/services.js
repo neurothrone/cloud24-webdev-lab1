@@ -30,7 +30,7 @@ function loadServices() {
                     <img src="${service.image}" class="card-img-top" alt="${service.alt}">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-center">${service.name}</h5>
-                        <p class="card-text text-center">$${service.price}</p>
+                        <p class="card-text text-center price-text">$${service.price}</p>
                         <button class="btn mt-auto" onclick="addToCart(${index})">Add to Cart</button>
                     </div>
                 </div>
@@ -43,11 +43,13 @@ function addToCart(index) {
   const service = services[index];
   cart.push(service);
   displayToast(service.name);
+  updateCartItemCount();
 }
 
 function removeFromCart(index) {
   cart = cart.filter((_, i) => i !== index);
   updateCartDisplay();
+  updateCartItemCount();
 }
 
 function displayToast(serviceName) {
@@ -79,16 +81,22 @@ function updateCartDisplay() {
   } else {
     cartItems.innerHTML = cart.map((item, index) => `
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <p class="mb-0">${item.name} - $${item.price}</p>
+            <p class="mb-0">${item.name} - <span class="price-text">$${item.price}</span></p>
             <button class="btn btn-danger" onclick="removeFromCart(${index})">Remove</button>
         </div>
     `).join("");
   }
 }
 
+function updateCartItemCount() {
+  const cartButton = document.getElementById("cartItemCount");
+  cartButton.textContent = `${cart.length}`;
+}
+
 function clearCart() {
   cart = [];
   updateCartDisplay();
+  updateCartItemCount();
 }
 
 window.onload = loadServices;

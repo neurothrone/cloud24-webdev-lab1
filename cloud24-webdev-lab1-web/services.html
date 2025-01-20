@@ -16,18 +16,24 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">The Chuckling Abyss</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navBar">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav  ms-auto mb-2 mb-lg-0 me-3">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 </ul>
+                <button type="button"
+                        class="btn btn-warning me-1 cart-button"
+                        onclick="toggleCart()">
+                    <span class="me-1">Cart</span>
+                    <span class="badge cart-icon" id="cartItemCount">0</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -35,14 +41,12 @@
     <!-- Main Content -->
     <main class="container-fluid py-4">
         <section>
-            <h2>Our Services</h2>
+            <h2 class="">Our Services</h2>
             <div id="servicesGrid" class="row g-3"></div>
         </section>
-        <section class="mt-5">
-            <h3>Your Cart</h3>
-            <button class="btn btn-warning" onclick="toggleCart()">View Cart</button>
-            <div id="cartModal" class="modal" tabindex="-1">
-                <div class="modal-dialog">
+        <section>
+            <div id="cartModal" class="modal modal-backdrop" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Cart</h5>
