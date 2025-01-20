@@ -23,11 +23,17 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navBar">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav  ms-auto mb-2 mb-lg-0 me-3">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 </ul>
+                <button type="button"
+                        class="btn btn-warning me-1 cart-button"
+                        onclick="toggleCart()">
+                    <span class="me-1">Cart</span>
+                    <span class="badge cart-icon" id="cartItemCount">0</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -39,11 +45,13 @@
             <p>Founded on the belief that life is a tragic comedy, we
                 offer humor-filled solutions for existential dread.</p>
         </section>
+
         <section class="mt-4">
             <h3>Contact Info</h3>
             <p>Email: laugh@thechucklingabyss.com</p>
             <p>Phone: +46 123 456 789</p>
         </section>
+
         <section class="mt-4">
             <h3>Our Location</h3>
             <!-- !: Google Maps URLs API -> Source: https://developers.google.com/maps/documentation/urls/get-started#search-action -->
@@ -63,6 +71,25 @@
                 </iframe>
             </div>
         </section>
+
+        <section>
+            <div id="cartModal" class="modal modal-backdrop" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Cart</h5>
+                            <button type="button" class="btn-close" onclick="toggleCart()"></button>
+                        </div>
+                        <div class="modal-body" id="cartItems"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn clear-cart-button" onclick="clearCart()">Clear Cart
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="toggleCart()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -72,5 +99,7 @@
 
     <!-- Bootstrap JS -->
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/site.js" type="module"></script>
 </body>
 </html>

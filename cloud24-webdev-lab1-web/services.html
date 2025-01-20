@@ -26,7 +26,7 @@
                 <ul class="navbar-nav  ms-auto mb-2 mb-lg-0 me-3">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
                 </ul>
                 <button type="button"
                         class="btn btn-warning me-1 cart-button"
@@ -44,6 +44,7 @@
             <h2 class="">Our Services</h2>
             <div id="servicesGrid" class="row g-3"></div>
         </section>
+
         <section>
             <div id="cartModal" class="modal modal-backdrop" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">
@@ -54,7 +55,8 @@
                         </div>
                         <div class="modal-body" id="cartItems"></div>
                         <div class="modal-footer">
-                            <button type="button" class="btn clear-cart-button" onclick="clearCart()">Clear Cart</button>
+                            <button type="button" class="btn clear-cart-button" onclick="clearCart()">Clear Cart
+                            </button>
                             <button type="button" class="btn btn-secondary" onclick="toggleCart()">Close</button>
                         </div>
                     </div>
@@ -87,6 +89,6 @@
     <!-- Bootstrap JS -->
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="js/services.js"></script>
+    <script src="js/site.js" type="module"></script>
 </body>
 </html>
