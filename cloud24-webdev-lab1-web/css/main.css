@@ -99,8 +99,16 @@ footer {
     background-color: var(--primary-prominent-color);
 }
 
-/* Cart Button */
+.clear-cart-button {
+    background-color: rgba(255, 0, 0, 0.5);
+    color: var(--primary-white-color);
+}
 
+.clear-cart-button:hover {
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+/* Cart Button */
 .cart-button {
     background-color: var(--secondary-prominent-color);
     border: none;
